@@ -1,35 +1,52 @@
 # Coral DevRel Strategy
 
-**A fractional Developer Relations program for [Coral](https://withcoral.com)**
+**A Developer Relations program for [Coral](https://withcoral.com)**
 
-Prepared by opencolin · Draft v1 · May 27, 2026
+Prepared by opencolin · Draft v2 · May 27, 2026 (post-CEO conversation)
 
 ---
 
 ## Cover note
 
-This is a 12-month fractional DevRel proposal for Coral — the open-source, local-first SQL runtime for AI agents. The proposal is built on a competitive SWOT of 42 vendors, the established structure of our prior DevRel programs for CrewAI, Memori, Glean, and Perplexity, and Coral's specific product reality: 27 bundled + 75+ community sources, ~4.9k GitHub stars in five weeks, Apache 2.0, MCP-native, no announced funding, no commercial tier yet.
+This is a 12-month DevRel proposal for Coral — the open-source, local-first SQL runtime for AI agents. **v2 incorporates direct input from a working session with Coral's CEO Matt Henderson** (May 27, 2026). It updates the positioning narrative, the GTM model (enterprise + managed services upsell), the memory landscape framing, and the engagement options (now three paths: fractional, 90-day pilot → full-time, full-time direct).
 
-The plan assumes **Coral Cloud / Teams ships in Q3 2026** and is engineered to make that launch land into an already-warm community.
+Built on a competitive SWOT of 42 vendors, the structure we've used for prior programs (CrewAI, Memori, Glean, Perplexity), and Coral's product reality: 27 bundled + 75+ community sources, ~4.9k GitHub stars in five weeks since the April 27, 2026 open-source release, Apache 2.0, MCP-native.
+
+**Founders:** Matt Henderson (CEO) + James (co-founder). Prior startup sold to Google, 2014. Team currently half Continental Europe, half UK. First two US hires are in the Bay Area: enterprise sales + DevRel engineer.
+
+**Origin:** Coral was extracted from **Phoebe**, the team's AI SRE product. Building a self-hosted version of Phoebe, then watching Claude Code mature, led the team to conclude that the future of agents is *compose-your-own* — that the data-retrieval layer should be unbundled, agent-agnostic, and owned by the customer. Coral is that unbundle. Initial user response was strong enough that Coral became a full company pivot.
+
+**The plan assumes Coral Cloud / Teams ships in Q3 2026** and is engineered to make that launch land into an already-warm community.
 
 ---
 
 ## 1. Why Coral, why now
 
-Coral has the strongest architectural thesis in the emerging Agent Data Access Platform (ADAP) category:
+Coral's thesis from the founders' own words:
 
-- **Only** product combining Apache 2.0 + local-first + Rust + MCP-native + cross-source SQL JOINs over SaaS APIs.
-- **Published benchmark** — 31% accuracy gain, 3.4× cost efficiency vs direct provider MCPs on Claude Opus 4.6 across 82 real coding tasks. No competitor publishes equivalent numbers.
-- **Permissive license** — Steampipe (closest analog) is AGPL-3.0; CData and PromptQL are closed. Coral is uniquely embeddable.
-- **Performance and posture** — single Rust binary, zero data egress. Strongest data-residency story in the category.
+> *"The best agent needs 12 different sources of data and a lot of them sensitive. It's a different kind of strategic and security iteration than having Datadog have your logs and GitHub have your repo and Slack have your communications. The future of agents will gravitate towards compose-your-own — to preserve strategic flexibility and to own the asset. Over the course of years, a company's usage produces a lot of derived intelligence. Companies need to decide if they want that value to accrue to them or accrue to a vertical AI provider."* — Matt Henderson, May 27 2026
 
-But architectural lead is perishable. Steampipe has 5+ years of plugins (150+). MindsDB has 8× the GitHub stars (39.2k). Composio has 28.5k stars under MIT. PromptQL (Hasura) is enterprise-funded and Cisco/McDonald's/Instacart-deployed. The next 6–12 months decide whether Coral is *the* category leader, *a* category leader, or absorbed.
+That thesis is the entire wedge. Five reinforcing strengths:
 
-DevRel is the lever. Coral does not need more engineering hours — it needs **community-led plugin velocity, public reference customers, and a defining content narrative** before incumbents pivot.
+- **Compose-your-own is the customer's strategic interest.** Vertical AI vendors (Datadog Bits, Honeycomb MCP, single-vendor SaaS agents) own the data and the derived intelligence. Coral inverts that — the customer composes the agent, owns the runtime, owns the history.
+- **Architectural moat.** The only product combining Apache 2.0 + local-first + Rust + MCP-native + cross-source SQL JOINs over SaaS APIs. Steampipe is AGPL. CData and PromptQL are closed. MindsDB is Python ML-platform-retrofitted.
+- **Published benchmark.** 31% accuracy gain, 3.4× cost efficiency vs direct provider MCPs (Claude Opus 4.6, n=82). No competitor publishes equivalent numbers.
+- **Sovereignty posture.** Single Rust binary, zero data egress. Strongest data-residency story in the category — directly aligned with what enterprises buy from Coral.
+- **Agent-agnostic by design.** Plugs into any harness — Claude Code, Cursor, Continue, Cody, Goose, in-house — and stays useful when those harnesses change. *"Reason why part of the infrastructure should be agent-agnostic and shared across agents"* — Matt.
+
+But architectural lead is perishable. Steampipe has 5+ years of plugins (150+). MindsDB has 8× the GitHub stars (39.2k). Composio has 28.5k stars under MIT (and a recent enterprise-trust setback from a security incident). PromptQL is enterprise-funded and Cisco/McDonald's/Instacart-deployed. **Matt's own framing:** *"100 other smart teams working in adjacent spaces. We need to make sure we are the winner or one of the winners."*
+
+DevRel is the lever. Coral does not need more engineering hours — it needs **community-led plugin velocity, public enterprise references, and a defining content narrative** before incumbents pivot.
+
+## 2. The positioning narrative — Coral's pitch in one paragraph
+
+> Your agent's effectiveness depends on having access to twelve sensitive sources at once. Vertical AI products want that data and the derived intelligence to accrue to them. Coral is the agent-agnostic data runtime that keeps both with you. Apache 2.0. Local-first. Compose your own agent on top — Claude Code, Cursor, whatever ships next — and switch harnesses without losing what your usage has taught the system. Owned infrastructure, owned intelligence, owned future.
+
+This is the through-line for every content asset, conference talk, customer pitch, and benchmark publication.
 
 ---
 
-## 2. North Star
+## 3. North Star
 
 > **Active weekly Coral installs running ≥3 sources per user.**
 
@@ -51,7 +68,7 @@ One metric captures product-market fit (installed), activation (configured sourc
 
 ---
 
-## 3. The seven initiatives
+## 4. The seven initiatives
 
 The same 7-initiative template we used for Memori and Glean, tuned to Coral's wedge. Each initiative attaches to a specific SWOT lever.
 
@@ -169,7 +186,7 @@ Convert displacement threats into distribution:
 
 ---
 
-## 4. Coral Cloud / Teams launch plan (Q3 2026)
+## 5. Coral Cloud / Teams launch plan (Q3 2026)
 
 The 12 months break into three phases, each ending with a marketing moment.
 
@@ -203,7 +220,44 @@ The 12 months break into three phases, each ending with a marketing moment.
 
 ---
 
-## 5. Content calendar — First 90 days
+## 6. The "on-demand agent dev tools team" — managed services as upsell
+
+Matt's clearest GTM framing in our conversation:
+
+> *"The revenue is in infrastructure or services. The value of the software is, like, for zero dollars from the customer's perspective… The customers need a developer tools team that knows their shit with agents. But their engineers who are the most agent-pulled tend not to be their developer tools team. So we will end up providing managed services that are like having an on-demand agent developer tools team."*
+
+This is not a side hustle — it's how Coral wins large enterprise. It also tells us exactly what DevRel needs to manufacture: the public proof that Coral's team can build, ship, and operate agent integrations at the depth enterprises need. Every reference architecture, every benchmark, every cohort case study is also a sales asset for the managed services tier.
+
+**DevRel deliverables that pre-sell managed services:**
+
+- **Reference implementations as portfolio.** Each BYO Agent reference (Claude Code, Cursor, Cody, Continue) doubles as a "look what we can build for you" portfolio piece for enterprise sales conversations.
+- **Cohort case studies with quantified ROI.** Each one is also a sales narrative: *"Here's how we built this with [Cohort co.] — we can build the equivalent for you."*
+- **Public office hours that an enterprise prospect can attend** — the team's depth becomes verifiable rather than claimed.
+- **"Build Days"** — quarterly all-day live-streamed sessions where the Coral team and a partner enterprise co-build a real integration on stage. Highest-trust enterprise content possible.
+- **DevRel engineer as bench overflow.** Early on, the DevRel engineer can take 20% of their time on paid managed-services engagements — turns DevRel from a cost center into partial revenue and forces a tight product feedback loop. Matt's "DevRel engineer" role spec (*"loves building stuff, is technically strong, also a great communicator… building example implementations that inspire"*) is already shaped for this.
+
+**Pricing anchor for managed services** (extrapolating from Matt's framing and enterprise comparables):
+
+- Discovery + first integration: $50K–$150K
+- Quarterly retainer (ongoing agent integration work): $20K–$60K/mo
+- Annual platform engagement (combined Coral Cloud + services): $250K–$1M
+
+## 7. Memory positioning — vs Memori, MEM0, Cognee
+
+Coral is shipping a memory feature (Matt confirmed in our session). The competitive set Coral is implicitly entering: Memori Labs (we ran their DevRel), MEM0, Cognee — all funded, all pitching "we are your agents' memory layer."
+
+Matt's framing of the positioning:
+
+> *"It'll be a kind of an either/or. You'll either bring your own existing memory tool and use Coral in conjunction with it, or you'll decide that you're happy to use Coral for both."*
+
+This is exactly the right framing. The DevRel program operationalizes it:
+
+- **"Bring your own memory" reference architecture** with the major memory vendors (Memori, MEM0, Cognee). Positions Coral as the data runtime, memory plays as complementary, not competitive. Lowers integration friction for enterprises already deciding on memory.
+- **"Coral as memory" reference architecture** with the same dataset, head-to-head. Lets buyers self-select.
+- **Memory benchmark** as part of the quarterly benchmark series. Same harness, same task set, four configurations: no memory, Coral memory, Memori + Coral, MEM0 + Coral. Public leaderboard.
+- **The strategic argument:** *"Reason why part of the infrastructure should be agent-agnostic and shared across agents. Reason why you'd want it to come from a different vendor than the one that's your model provider."* That same logic applies to memory — and Coral already wins on agent-agnostic + non-model-vendor.
+
+## 8. Content calendar — First 90 days
 
 | Wk | Drop | Channel | Persona |
 |---|---|---|---|
@@ -222,7 +276,7 @@ The 12 months break into three phases, each ending with a marketing moment.
 
 ---
 
-## 6. Events (12-month conference plan)
+## 9. Events (12-month conference plan)
 
 | Quarter | Event | Investment | Goal |
 |---|---|---|---|
@@ -239,9 +293,21 @@ Total event budget: **~$130K/year** (sponsorships + travel for 4 FTEs).
 
 ---
 
-## 7. What we (opencolin) deliver
+## 10. What we (opencolin) deliver
 
-This is a **fractional DevRel engagement**, not a hire. We bring the operating system; Coral keeps engineering focus on the runtime.
+The substance below is the same in any of the three engagement options. Coral picks the container.
+
+### Three engagement options
+
+> Matt in our session: *"We might end up concluding that we really need to be sort of all-in from the get-go."* So we offer paths:
+
+| Option | Shape | Anchor cost | When to pick |
+|---|---|---|---|
+| **A · Full-time, all-in** | I close out my current Nebius engagement on a ~60-day transition and join Coral as **Head of DevRel** / **DevRel Engineer** | Standard SF compensation + equity | You're convinced and want exclusive focus from day one |
+| **B · 90-day paid pilot → full-time conversion** | Defined OKRs, defined exit criteria, $35K/mo retainer + $50K program seed for the 90 days, then convert | $155K for 90 days, then full-time terms | You want to derisk both sides before either commits |
+| **C · Fractional with concrete OKRs** | Quarterly engagement, ramps up to $420K/year + programs as Cloud lands | $35–50K/mo retainer + program budget | You want the operating system without owning a full headcount until Cloud has product-market-fit |
+
+In each option Coral gets the operating system on day one — Discord, office hours, content cadence, benchmark publishing, cohort program, bounty system, OpenClaw agent. The differences are exclusivity, equity, and the ramp.
 
 ### Always-on operating system (monthly retainer)
 - DevRel strategy ownership and quarterly OKR planning
@@ -270,7 +336,7 @@ This is a **fractional DevRel engagement**, not a hire. We bring the operating s
 
 ---
 
-## 8. Resource model
+## 11. Resource model
 
 ### Headcount (12-month)
 | Function | FTE | Annual |
@@ -299,25 +365,28 @@ This is a **fractional DevRel engagement**, not a hire. We bring the operating s
 | Discord Nitro/community tools, newsletter, video, analytics | $40K |
 | **Subtotal** | **$40K** |
 
-### Fractional DevRel retainer (opencolin)
-| | Annual |
+### Engagement-option pricing (opencolin)
+
+| Option | Year-1 cost (opencolin only) |
 |---|---|
-| 12 months × $35K/mo | $420K |
+| **A · Full-time** | Standard SF DevRel comp ($220–260K base + equity) — replaces the "Head of DevRel" line above |
+| **B · 90-day pilot → full-time** | $155K for 90 days, then converts to Option A terms |
+| **C · Fractional** | $35K/mo retainer = **$420K** annual |
 
-**Total Year 1: ~$1.69M** — high-end if Coral hires fully. Realistic ramp: ~$300K + programs in mo 1–6 (1 founder + 1 DevRel hire + fractional engagement), expanding post-Seed to full $1.69M run-rate by mo 9.
+**Total Year 1 — full-build path: ~$1.69M.** Realistic ramp for pre/post-Seed Coral: ~$300K + programs in mo 1–6 (1 founder + 1 DevRel + opencolin engagement), expanding to full $1.69M run-rate by mo 9.
 
-### Pre-Seed/Seed-friendly version
+### Pre-Seed-friendly version
 | Phase | Spend | Headcount |
 |---|---|---|
-| Mo 1–3 | $35K/mo retainer + $50K programs | Founder-led + 1 fractional engagement |
-| Mo 4–6 | $35K + $100K | + 1 DevRel hire |
+| Mo 1–3 | $35K/mo retainer + $50K programs | Founder-led + 1 opencolin engagement |
+| Mo 4–6 | $35K + $100K | + 1 DevRel hire (or convert opencolin engagement) |
 | Mo 7–12 | $50K + $200K | + 1 DevRel Engineer, ramp to full team |
 
 **Total Year 1 pre-Seed-friendly: ~$900K.** Cuts bounty pool, halves conference budget, single cohort.
 
 ---
 
-## 9. Metrics dashboard (`withcoral.com/metrics` or internal)
+## 12. Metrics dashboard (`withcoral.com/metrics` or internal)
 
 Public-facing for credibility. Updated weekly.
 
@@ -349,13 +418,16 @@ Public-facing for credibility. Updated weekly.
 
 ---
 
-## 10. Risks + mitigations
+## 13. Risks + mitigations
 
 | Risk | Likelihood | Mitigation |
 |---|---|---|
 | Steampipe relicenses to Apache + invests in MCP | Medium | Win cadence — publish faster, build deeper Anthropic alliance |
 | MindsDB pivots agent-cost narrative | Medium | Lock the benchmark definition first; differentiate on Rust performance |
 | Anthropic ships first-party MCP aggregator | High | Position as "the Anthropic reference data layer," not a competitor |
+| Composio recovers from its security incident and wins back enterprise trust | Medium | Lean harder into local-first / Apache 2.0 / sovereignty — Composio's hacker-founder positioning is structurally weaker for the enterprise segment Coral wants |
+| Memory plays (Memori, MEM0, Cognee) capture the "agent infrastructure" mind-share | Medium | Public BYO-memory reference architectures + memory inside the quarterly benchmark series (see §7) |
+| Vertical AI vendors lock customers into single-source agents | Continuous | Make sovereignty / compose-your-own the lead pitch — Matt's own framing is the entire wedge |
 | Bounty quality issues | High | Tiered review gate, maintainer approval, payout only after merge + 30-day stability |
 | Brand confusion (Coral AI Google, Cohere Coral) | Continuous | SEO budget, lock @withcoral, Wikipedia disambig |
 | Cohort customers won't go public | Medium | 50% Cloud discount for life as quote-permission incentive |
@@ -364,7 +436,7 @@ Public-facing for credibility. Updated weekly.
 
 ---
 
-## 11. Why opencolin
+## 14. Why opencolin
 
 We run the same operating system across multiple AI/ML companies — see prior programs for [Memori](https://github.com/opencolin/memori-devrel), [Glean](https://github.com/opencolin/memori-devrel), [CrewAI](https://github.com/opencolin/crewai-devrel), [Perplexity](https://github.com/opencolin/perplexity-devrel), and our internal [AI DevRel agent](https://github.com/opencolin/ai-devrel).
 
@@ -377,12 +449,13 @@ Coral gets:
 
 ---
 
-## 12. Next steps
+## 15. Next steps
 
-1. Confirm fractional engagement scope (this doc as starting point)
-2. Sign 90-day pilot ($35K/mo retainer + $50K program seed = $155K) covering Phase 1 Foundations
-3. Kick off Week 1: Source Spec Cookbook, weekly office hours, Discord investment, Cohort #1 prep
-4. Quarterly review gate to expand to full Year 1 engagement
+1. Matt + James align on which of the three engagement options fits Coral now
+2. 30-minute follow-up call with James to brief him on this doc and the live site
+3. If pilot path: sign 90-day pilot ($155K) — kick off Week 1 with Source Spec Cookbook, weekly office hours, Discord investment, Cohort #1 prep
+4. If full-time path: confirm comp + equity range, plan 60-day Nebius wind-down
+5. Quarterly review gate either way
 
 Contact: collin@dabl.club
 

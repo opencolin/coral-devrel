@@ -15,38 +15,90 @@
   <!-- 1. Title -->
   <div class="slide title active">
     <h1>Coral DevRel</h1>
-    <div class="sub">A 12-month fractional Developer Relations program</div>
-    <div class="author">opencolin · v1 · May 27, 2026</div>
+    <div class="sub">A 12-month Developer Relations program · post-CEO conversation</div>
+    <div class="author">opencolin · v2 · May 27, 2026</div>
   </div>
 
-  <!-- 2. Why Coral, why now -->
+  <!-- 2. Origin -->
+  <div class="slide">
+    <h2>Where Coral came from.</h2>
+    <p class="lede">Coral was extracted from <strong>Phoebe</strong>, the team's AI SRE product.</p>
+    <ul>
+      <li>Team built a self-hosted Phoebe just as Claude Code matured</li>
+      <li>Concluded: future of agents is <strong>compose-your-own</strong></li>
+      <li>Unbundled Phoebe's data-retrieval layer → <strong>Coral, standalone</strong></li>
+      <li>User reaction was strong enough to <strong>pivot the whole company</strong></li>
+      <li>Open-sourced four weeks ago. 4.9k stars in five weeks.</li>
+    </ul>
+  </div>
+
+  <!-- 3. The thesis, in the CEO's words -->
+  <div class="slide">
+    <h2>The thesis, in the CEO's words.</h2>
+    <p class="lede" style="font-size: 1.15rem; color: #D1D5DB; max-width: 70ch;">
+      <em>"The best agent needs 12 different sources of data and a lot of them sensitive. It's a different kind of strategic and security iteration than having Datadog have your logs and GitHub have your repo and Slack have your communications. The future of agents will gravitate towards compose-your-own — to preserve strategic flexibility and to own the asset. Companies need to decide if they want the value of this usage to accrue to them or accrue to a vertical AI provider."</em>
+    </p>
+    <p style="color: #6B7280; margin-top: 1.5rem; font-size: 0.95rem;">— Matt Henderson, May 27 2026</p>
+  </div>
+
+  <!-- 4. The pitch in one paragraph -->
+  <div class="slide">
+    <h2>The pitch, in one paragraph.</h2>
+    <p class="lede" style="font-size: 1.25rem; color: white; max-width: 65ch; line-height: 1.6;">
+      Your agent's effectiveness depends on having access to <strong>twelve sensitive sources at once</strong>. Vertical AI products want that data and the <strong>derived intelligence</strong> to accrue to them. Coral is the agent-agnostic data runtime that keeps both with you.
+    </p>
+    <p style="color: #B8BCC8; margin-top: 1.5rem; font-size: 1.05rem; max-width: 65ch;">
+      Apache 2.0. Local-first. Compose your own agent on top — Claude Code, Cursor, whatever ships next — and switch harnesses without losing what your usage has taught the system.
+    </p>
+    <p style="color: var(--coral); margin-top: 1.5rem; font-size: 1.1rem;">
+      Owned infrastructure. Owned intelligence. Owned future.
+    </p>
+  </div>
+
+  <!-- 5. Architectural moat -->
   <div class="slide">
     <h2>The architectural lead is perishable.</h2>
-    <p class="lede">Coral has the strongest thesis in the Agent Data Access Platform market.</p>
+    <p class="lede">Five-way intersection nobody else hits.</p>
     <ul>
-      <li><strong>Apache 2.0 + local-first + Rust + MCP-native + cross-source SQL</strong> — only product combining all five</li>
+      <li><strong>Apache 2.0 + local-first + Rust + MCP-native + cross-source SQL JOINs</strong></li>
       <li><strong>3.4× cost efficiency, 31% accuracy gain</strong> vs direct provider MCPs (Claude Opus 4.6, n=82)</li>
       <li><strong>4.9k stars in 5 weeks</strong> — top 1% velocity for new dev tools</li>
+      <li><strong>27 bundled + 75+ community sources</strong> shipped in month one</li>
     </ul>
-    <p class="lede" style="margin-top: 2rem;">But Steampipe has 150+ plugins. MindsDB has 39k stars. Composio is MIT with 28k. The window to lead is 6–12 months wide.</p>
+    <p class="lede" style="margin-top: 2rem;">But Steampipe has 150+ plugins. MindsDB has 39k stars. Composio has 28k (and a recent enterprise-trust setback). The window to lead is <strong>6–12 months</strong> wide.</p>
   </div>
 
-  <!-- 3. The wedge -->
+  <!-- 6. The wedge -->
   <div class="slide">
     <h2>The wedge.</h2>
     <div class="big-num">3.4×</div>
     <p class="lede">More cost-efficient than direct provider MCPs on real coding tasks. No other vendor publishes a comparable benchmark. We can own the metric definition.</p>
   </div>
 
-  <!-- 4. The threats -->
+  <!-- The threats -->
   <div class="slide">
     <h2>What we're racing against.</h2>
     <ul>
       <li><strong>Steampipe</strong> — 150+ plugins, AGPL, could relicense + add MCP</li>
-      <li><strong>MindsDB</strong> — 39.2k stars, ships MCP today, could pivot agent-cost narrative</li>
-      <li><strong>Composio + Zapier MCP</strong> — 1,000+ and 9,000+ integrations; could add batched SQL</li>
+      <li><strong>MindsDB</strong> — 39k stars, ships MCP today, could pivot agent-cost narrative</li>
+      <li><strong>Composio</strong> — SF darling, MIT, 28k stars; recent security incident weakened enterprise trust</li>
+      <li><strong>Memory plays</strong> — Memori, MEM0, Cognee competing for the same "agent infrastructure" mind-share</li>
       <li><strong>Anthropic</strong> — could ship first-party MCP aggregator</li>
-      <li><strong>Backstage / Cortex / Port</strong> — IDPs absorb the use case via MCP plugins</li>
+      <li><strong>Vertical AI vendors</strong> — Datadog Bits, Honeycomb MCP, Cursor — want to own the data and the derived intelligence</li>
+    </ul>
+    <p class="lede" style="margin-top: 1.5rem; color: var(--coral);">Matt's framing: <em>"100 other smart teams in adjacent spaces. We need to be the winner or one of the winners."</em></p>
+  </div>
+
+  <!-- Memory positioning -->
+  <div class="slide">
+    <h2>Memory positioning.</h2>
+    <p class="lede">Coral is shipping a memory feature. Memori, MEM0, and Cognee are all funded and pitching "we are your memory layer."</p>
+    <p style="color: #D1D5DB; font-size: 1.1rem; margin-top: 1.5rem;">Matt's framing: <em>"Either bring your own memory tool and use Coral with it, or use Coral for both."</em></p>
+    <ul>
+      <li><strong>"Bring your own memory" reference architectures</strong> — Memori × Coral, MEM0 × Coral, Cognee × Coral</li>
+      <li><strong>"Coral as memory" reference architecture</strong> — head-to-head, same dataset</li>
+      <li><strong>Memory in the quarterly benchmark</strong> — public leaderboard, four configurations</li>
+      <li><strong>Strategic argument:</strong> agent-agnostic + non-model-vendor — same reasoning that applies to data also applies to memory</li>
     </ul>
   </div>
 
@@ -185,7 +237,7 @@
     <p style="margin-top: 1.5rem; color: var(--coral);"><strong>Milestone:</strong> 12k stars · 180 sources · 3k WAD · 25 Cloud teams</p>
   </div>
 
-  <!-- 16. Phase 3 -->
+  <!-- Phase 3 -->
   <div class="slide">
     <h2>Phase 3 — Scale · Mo 7–12.</h2>
     <ul>
@@ -198,10 +250,26 @@
     <p style="margin-top: 1.5rem; color: var(--coral);"><strong>Milestone:</strong> 20k stars · 250 sources · 5k WAD · 50 Cloud teams · $500K ARR</p>
   </div>
 
-  <!-- 17. What we deliver -->
+  <!-- Managed services -->
+  <div class="slide">
+    <h2>The real GTM: managed services.</h2>
+    <p class="lede" style="font-size: 1.1rem; color: #D1D5DB; max-width: 65ch;">
+      Matt: <em>"The revenue is in infrastructure or services. Customers need a developer tools team that knows their shit with agents. So we'll end up providing managed services that are like having an on-demand agent developer tools team."</em>
+    </p>
+    <p style="margin-top: 1.5rem;">DevRel manufactures the proof the managed-services tier sells:</p>
+    <ul>
+      <li><strong>Reference implementations</strong> double as a "look what we can build for you" portfolio</li>
+      <li><strong>Cohort case studies</strong> with quantified ROI become sales narratives</li>
+      <li><strong>Public office hours</strong> let prospects verify the team's depth</li>
+      <li><strong>Quarterly "Build Days"</strong> — live-streamed enterprise co-builds</li>
+      <li><strong>DevRel engineer as bench overflow</strong> — 20% time on paid services, partial revenue from day one</li>
+    </ul>
+  </div>
+
+  <!-- What we deliver -->
   <div class="slide">
     <h2>What we deliver.</h2>
-    <p class="lede">Fractional engagement. The operating system, not a hire.</p>
+    <p class="lede">The same operating system in any of three engagement options.</p>
     <ul>
       <li><strong>Always-on:</strong> strategy, content, community, benchmarks, cohorts, bounties, events, analyst, brand</li>
       <li><strong>Project-based:</strong> reference architectures, cookbook, Cloud GTM, Backstage plugin</li>
@@ -209,18 +277,19 @@
     </ul>
   </div>
 
-  <!-- 18. Engagement model -->
+  <!-- Three engagement options -->
   <div class="slide">
-    <h2>Engagement model.</h2>
-    <ul>
-      <li><strong>90-day pilot:</strong> $35K/mo retainer + $50K seed = <strong>$155K total</strong></li>
-      <li><strong>Year 1 full:</strong> $420K retainer + $460K programs + $40K tools = <strong>$920K</strong></li>
-      <li><strong>Quarterly OKR review gate</strong> — scope expands or contracts based on outcomes</li>
-      <li><strong>Exit ramp:</strong> at month 12 we hand off to a hired Head of DevRel</li>
+    <h2>Three engagement options.</h2>
+    <p class="lede" style="color: #D1D5DB;">Matt: <em>"We might end up concluding that we really need to be sort of all-in from the get-go."</em> Pick the container that fits.</p>
+    <ul style="font-size: 1.05rem;">
+      <li><strong>A · Full-time, all-in.</strong> Close out Nebius over 60 days, join as Head of DevRel / DevRel Engineer. Standard SF comp + equity.</li>
+      <li><strong>B · 90-day paid pilot → full-time conversion.</strong> $155K for 90 days with defined OKRs, convert at the gate. De-risks both sides.</li>
+      <li><strong>C · Fractional with concrete OKRs.</strong> $35–50K/mo retainer + programs. Operating system, lighter commitment, scale post-Cloud.</li>
     </ul>
+    <p style="margin-top: 1.5rem; color: var(--coral);">Substance is identical in all three. Only exclusivity and ramp differ.</p>
   </div>
 
-  <!-- 19. Why opencolin -->
+  <!-- Why opencolin -->
   <div class="slide">
     <h2>Why opencolin.</h2>
     <p class="lede">Same operating system, four prior programs.</p>
@@ -229,18 +298,19 @@
       <li><strong>Memori</strong> — agent memory + SF residency + MCP marketplace</li>
       <li><strong>Glean</strong> — enterprise AI search dev programs</li>
       <li><strong>Perplexity Sonar</strong> — 90-day growth + ecosystem vision</li>
+      <li><strong>Nebius (current)</strong> — agent + AI infrastructure DevRel; Tavily complement available for joint events</li>
     </ul>
-    <p style="color: #B8BCC8; margin-top: 1.5rem;">Plus our internal AI DevRel OS — OpenClaw agent, MetricsBoard, Cohort Portal.</p>
+    <p style="color: #B8BCC8; margin-top: 1.5rem;">Plus our internal AI DevRel OS — OpenClaw agent, MetricsBoard, Cohort Portal — and a fellows network across SF, NYC, London, Berlin, Bangalore, São Paulo.</p>
   </div>
 
-  <!-- 20. Next steps -->
+  <!-- Next steps -->
   <div class="slide">
     <h2>Next steps.</h2>
     <ol style="font-size: 1.2rem; color: #D1D5DB;">
-      <li>Confirm fractional engagement scope</li>
-      <li>Sign 90-day pilot ($155K) covering Phase 1</li>
-      <li>Week 1: Source Spec Cookbook, weekly office hours, Discord investment, Cohort #1 prep</li>
-      <li>Quarterly review gate to expand to full Year 1</li>
+      <li>Matt + James align on which of the three engagement options fits Coral now</li>
+      <li>30-minute follow-up with James to brief him on this deck + the live site</li>
+      <li>If pilot path: sign 90-day pilot ($155K) — kick off Source Spec Cookbook + Cohort #1 prep in week 1</li>
+      <li>If full-time path: confirm comp + equity, plan 60-day Nebius wind-down</li>
     </ol>
     <p style="margin-top: 2rem; color: var(--coral); font-size: 1.2rem;">collin@dabl.club</p>
   </div>
@@ -256,7 +326,7 @@
 
 <div class="deck-controls">
   <button class="deck-prev" aria-label="Previous slide">←</button>
-  <span class="deck-counter">1 / 21</span>
+  <span class="deck-counter">1 / 26</span>
   <button class="deck-next" aria-label="Next slide">→</button>
 </div>
 

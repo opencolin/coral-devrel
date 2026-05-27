@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-destructed</title>
+  <meta name="robots" content="noindex" />
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      background: #0a0a0a;
+      color: #d0d0d0;
+      font-family: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+      overflow: hidden;
+    }
+    .frame {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+    }
+    .icon {
+      font-size: clamp(4rem, 12vw, 8rem);
+      line-height: 1;
+      margin-bottom: 2rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    h1 {
+      font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #FF6F61;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 50ch;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #888;
+      margin: 0 auto 1rem;
+    }
+    code {
+      color: #FF6F61;
+      background: rgba(255,111,97,0.08);
+      padding: 0.15em 0.5em;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+    .stamp {
+      margin-top: 3rem;
+      font-size: 0.78rem;
+      color: #4a4a4a;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.85; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.05); }
+    }
+    .scanline {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        0deg,
+        rgba(255,255,255,0.015) 0px,
+        rgba(255,255,255,0.015) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+    }
+    .vignette {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.6) 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="scanline"></div>
+  <div class="vignette"></div>
+  <div class="frame">
+    <div class="icon" aria-hidden="true">💥</div>
+    <h1>This pitch has self-destructed.</h1>
+    <p>The Coral DevRel proposal was withdrawn or expired. The production alias is unrouted.</p>
+    <p>If you reached this page in error, it can be restored by running <code>vercel deploy --prod</code> from local.</p>
+    <p class="stamp">opencolin · coral-devrel · 💀</p>
+  </div>
+</body>
+</html>

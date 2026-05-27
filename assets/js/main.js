@@ -49,6 +49,108 @@
   render();
 })();
 
+// Self-destruct modal
+(function () {
+  const open = document.getElementById('self-destruct-open');
+  const modal = document.getElementById('destruct-modal');
+  if (!open || !modal) return;
+
+  const pinInput = document.getElementById('destruct-pin');
+  const arm = document.getElementById('destruct-arm');
+  const errEl = document.getElementById('destruct-error');
+  const countEl = document.getElementById('destruct-count');
+  const doneDetail = document.getElementById('destruct-done-detail');
+  const steps = modal.querySelectorAll('.destruct-step');
+  let countdownTimer = null;
+
+  function showStep(name) {
+    steps.forEach(s => { s.hidden = s.dataset.step !== name; });
+  }
+
+  function openModal() {
+    modal.hidden = false;
+    showStep('confirm');
+    errEl.hidden = true;
+    pinInput.value = '';
+    setTimeout(() => pinInput.focus(), 50);
+  }
+
+  function closeModal() {
+    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
+    modal.hidden = true;
+  }
+
+  function showError(msg) {
+    errEl.textContent = msg;
+    errEl.hidden = false;
+  }
+
+  async function fire(pin) {
+    showStep('firing');
+    try {
+      const res = await fetch('/api/self-destruct', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ pin })
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data.ok) {
+        showStep('confirm');
+        showError(data.error ? `${data.error}${data.detail ? ' — ' + data.detail : ''}` : `Request failed (${res.status})`);
+        return;
+      }
+      showStep('done');
+      doneDetail.textContent = data.mode === 'live'
+        ? (data.message || 'Alias removed.')
+        : (data.message || 'PIN accepted (demo mode — VERCEL_TOKEN not set).');
+      // Visible kill: redirect to tombstone after a beat
+      setTimeout(() => { window.location.href = 'destroyed.html'; }, 1600);
+    } catch (err) {
+      showStep('confirm');
+      showError('Network error: ' + (err && err.message ? err.message : err));
+    }
+  }
+
+  function startCountdown(pin) {
+    showStep('countdown');
+    let n = 5;
+    countEl.textContent = n;
+    countdownTimer = setInterval(() => {
+      n -= 1;
+      if (n <= 0) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+        document.body.classList.add('destruct-flash');
+        setTimeout(() => document.body.classList.remove('destruct-flash'), 600);
+        fire(pin);
+      } else {
+        countEl.textContent = n;
+      }
+    }, 1000);
+  }
+
+  open.addEventListener('click', openModal);
+  modal.addEventListener('click', e => {
+    if (e.target.matches('[data-destruct-close]')) closeModal();
+    if (e.target.closest('.destruct-step-countdown')) {
+      if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
+      showStep('confirm');
+    }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeModal();
+  });
+  pinInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.preventDefault(); arm.click(); }
+  });
+  arm.addEventListener('click', () => {
+    const pin = pinInput.value.trim();
+    if (!pin) { showError('Enter the PIN.'); return; }
+    errEl.hidden = true;
+    startCountdown(pin);
+  });
+})();
+
 // Metrics dashboard — load JSON if present and render via safe DOM construction
 (async function () {
   const grid = document.getElementById('metrics-grid');

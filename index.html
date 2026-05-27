@@ -282,9 +282,43 @@
     <div class="btn-row" style="margin-top: 2rem;">
       <a class="btn" href="mailto:collin@dabl.club">Email collin@dabl.club</a>
       <a class="btn secondary" href="presentation.html" style="background: transparent; color: white !important; border-color: rgba(255,255,255,0.2);">Walk through the deck</a>
+      <button class="btn destruct" id="self-destruct-open" type="button" aria-label="Self-destruct this pitch">💥 Self-destruct this pitch</button>
     </div>
   </div>
 </section>
+
+<!-- Self-destruct modal -->
+<div class="destruct-modal" id="destruct-modal" role="dialog" aria-modal="true" aria-labelledby="destruct-title" hidden>
+  <div class="destruct-overlay" data-destruct-close></div>
+  <div class="destruct-panel">
+    <div class="destruct-step destruct-step-confirm" data-step="confirm">
+      <div class="destruct-icon" aria-hidden="true">⚠️</div>
+      <h2 id="destruct-title">Self-destruct this pitch.</h2>
+      <p>This removes the production alias <code>coral-devrel.vercel.app</code> via Vercel's API. The site stops resolving within ~30 seconds.</p>
+      <p class="destruct-muted">Reversible: <code>vercel deploy --prod</code> from local re-attaches the alias.</p>
+      <label class="destruct-label" for="destruct-pin">PIN</label>
+      <input type="text" inputmode="numeric" autocomplete="off" id="destruct-pin" placeholder="••••" maxlength="32" />
+      <div class="destruct-error" id="destruct-error" hidden></div>
+      <div class="destruct-actions">
+        <button class="btn secondary" type="button" data-destruct-close>Cancel</button>
+        <button class="btn destruct" id="destruct-arm" type="button">Arm self-destruct</button>
+      </div>
+    </div>
+    <div class="destruct-step destruct-step-countdown" data-step="countdown" hidden>
+      <div class="destruct-count" id="destruct-count">5</div>
+      <p class="destruct-muted">Click anywhere to abort.</p>
+    </div>
+    <div class="destruct-step destruct-step-firing" data-step="firing" hidden>
+      <div class="destruct-icon destruct-spin" aria-hidden="true">💥</div>
+      <p>Removing alias…</p>
+    </div>
+    <div class="destruct-step destruct-step-done" data-step="done" hidden>
+      <div class="destruct-icon" aria-hidden="true">💀</div>
+      <p>Self-destructed.</p>
+      <p class="destruct-muted" id="destruct-done-detail"></p>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="container">

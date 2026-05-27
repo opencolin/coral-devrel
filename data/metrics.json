@@ -1,0 +1,55 @@
+{
+  "north_star": "Weekly active developers running ≥3 sources",
+  "last_updated": "2026-05-27",
+  "kpis": [
+    {
+      "label": "GitHub stars (current)",
+      "value": "4,900",
+      "note": "5 weeks since launch",
+      "highlight": true
+    },
+    {
+      "label": "Source specs",
+      "value": "102",
+      "note": "27 bundled + 75+ community"
+    },
+    {
+      "label": "Cost efficiency vs MCPs",
+      "value": "3.4×",
+      "note": "Claude Opus 4.6, n=82 coding tasks"
+    },
+    {
+      "label": "Accuracy gain vs MCPs",
+      "value": "+31%",
+      "note": "Claude Opus 4.6, n=82 coding tasks"
+    },
+    {
+      "label": "Funding announced",
+      "value": "$0",
+      "note": "Crunchbase, May 2026"
+    },
+    {
+      "label": "Named customer refs",
+      "value": "0",
+      "note": "Cohort #1 will fix this"
+    },
+    {
+      "label": "Year-1 source target",
+      "value": "250+",
+      "note": "~$150K bounty budget",
+      "highlight": true
+    },
+    {
+      "label": "Year-1 WAD target",
+      "value": "5,000",
+      "note": "Weekly active developers",
+      "highlight": true
+    },
+    {
+      "label": "Coral Cloud Q4 target",
+      "value": "50 teams",
+      "note": "$500K ARR target",
+      "highlight": true
+    }
+  ]
+}

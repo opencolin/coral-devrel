@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Programs · Coral DevRel</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>Coral DevRel <small>by opencolin</small></a>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="programs.html">Programs</a>
+      <a href="ecosystem.html">Ecosystem</a>
+      <a href="community.html">Community</a>
+      <a href="content.html">Content</a>
+      <a href="events.html">Events</a>
+      <a href="partners.html">Partners</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="swot-analysis.html">SWOT</a>
+      <a href="metrics-dashboard.html">Metrics</a>
+      <a class="nav-cta" href="presentation.html">View deck →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Programs</span>
+    <h1>Three flagship programs that build community velocity, public references, and Cloud pipeline.</h1>
+    <p class="lede">Coral's biggest constraints — integration breadth, customer references, and pre-launch Cloud pipeline — each get a dedicated program with a budget, a cadence, and a public metric.</p>
+  </div>
+</header>
+
+<section class="container">
+  <div class="section-eyebrow">Program 1</div>
+  <h2 class="section-title">Coral Co-Pilot Cohort</h2>
+  <p class="section-lede">12-week design-partner cohort. 8–10 companies per batch, 4 batches per year. Built to manufacture 5+ quotable customer references in 12 months and 50 Coral Cloud paying teams by Q4 2026.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-value coral">8–10</div><div class="stat-label">Per cohort</div></div>
+    <div class="stat"><div class="stat-value coral">4</div><div class="stat-label">Cohorts / year</div></div>
+    <div class="stat"><div class="stat-value">12 wks</div><div class="stat-label">Per cohort</div></div>
+    <div class="stat"><div class="stat-value">$50K</div><div class="stat-label">Annual program cost</div></div>
+  </div>
+
+  <h3>What the cohort gets</h3>
+  <ul>
+    <li>Dedicated Slack channel per cohort with Rajya, Matt, and the DevRel team</li>
+    <li>Weekly office hours with the founders</li>
+    <li>Custom source specs authored on demand</li>
+    <li>First access to Coral Cloud (Q3 2026)</li>
+    <li>50% Cloud discount for life</li>
+    <li>White-glove onboarding for their AI agents (Claude Code / Cursor / Cody)</li>
+  </ul>
+
+  <h3>What we get</h3>
+  <ul>
+    <li>Published case study with quantified ROI (tokens saved, hours saved)</li>
+    <li>Quotable customer story</li>
+    <li>Co-presented conference talk</li>
+    <li>Logo on <code>withcoral.com/customers</code></li>
+    <li>Public Demo Day livestream</li>
+  </ul>
+
+  <h3>Target list (Cohort #1)</h3>
+  <p>AI-native companies already invested in Claude Code/Cursor and likely to publicly endorse OSS dev tools.</p>
+  <table>
+    <thead><tr><th>Company</th><th>Why a fit</th><th>Likely champion</th></tr></thead>
+    <tbody>
+      <tr><td>Vercel</td><td>AI SDK team uses agents heavily; multi-source SQL maps to deploys × analytics × Sentry</td><td>Lee Robinson / Guillermo</td></tr>
+      <tr><td>Linear</td><td>Public Claude Code adopter; would benefit from GitHub × Linear JOIN demos</td><td>Karri Saarinen</td></tr>
+      <tr><td>Stripe</td><td>Major MCP investment; cohort fit for billing × support × deploys queries</td><td>Developer Platform team</td></tr>
+      <tr><td>Cursor (Anysphere)</td><td>Coral as default data layer; co-marketed reference architecture</td><td>Michael Truell</td></tr>
+      <tr><td>Replit</td><td>Agent platform with strong MCP roadmap</td><td>Amjad Masad</td></tr>
+      <tr><td>Sourcegraph</td><td>Cody MCP × Coral demo; complementary code-vs-ops data narrative</td><td>Beyang Liu</td></tr>
+      <tr><td>Cognition (Devin)</td><td>AI SRE workflows need cross-source SQL access</td><td>Scott Wu</td></tr>
+      <tr><td>Decagon / Sierra</td><td>Customer escalation agents; Coral context loads</td><td>Jesse Zhang / Bret Taylor</td></tr>
+      <tr><td>Modal</td><td>Serverless GPU; Coral runs in their workers</td><td>Erik Bernhardsson</td></tr>
+      <tr><td>Browserbase</td><td>Browser × Coral data layer combo for agent ops</td><td>Paul Klein</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <p><strong>Demo Day mechanic.</strong> Quarterly public livestream where 8 cohort companies each give a 5-minute Coral implementation talk. Same playbook YC uses for Demo Day — manufactures social proof at scale, creates a press moment, and seeds the next cohort's pipeline.</p>
+  </div>
+</section>
+
+<section style="background: var(--ocean-soft);">
+  <div class="container">
+    <div class="section-eyebrow">Program 2</div>
+    <h2 class="section-title">Source Spec Bounty Program</h2>
+    <p class="section-lede">Crowdsourced breadth with real money. Targets 100 new specs in year 1, doubling Coral's current source count via community contributions alone.</p>
+
+    <div class="cards">
+      <div class="card">
+        <span class="pill">Tier 1</span>
+        <h3>$200 · REST</h3>
+        <p>REST API, simple auth (API key or basic), ≤5 tables. Examples: status pages, weather, public data sources.</p>
+      </div>
+      <div class="card">
+        <span class="pill">Tier 2</span>
+        <h3>$500 · OAuth</h3>
+        <p>OAuth flow, pagination, ≥10 tables. Examples: HubSpot, Mixpanel, Zendesk basics.</p>
+      </div>
+      <div class="card">
+        <span class="pill coral">Tier 3</span>
+        <h3>$1,000 · GraphQL / stateful</h3>
+        <p>GraphQL or custom protocol, or stateful auth flows. Examples: Shopify Admin API, Asana, Monday.com.</p>
+      </div>
+      <div class="card">
+        <span class="pill coral">Tier 4</span>
+        <h3>$2,000 · Enterprise SaaS</h3>
+        <p>Complex SaaS with deep schemas. Examples: Salesforce, SAP, NetSuite, Workday.</p>
+      </div>
+    </div>
+
+    <h3>Quarterly bonuses</h3>
+    <ul>
+      <li><strong>$5,000</strong> top contributor each quarter</li>
+      <li><strong>$10,000</strong> grand prize annually</li>
+      <li><strong>$1,000</strong> for first community spec to reach 1,000+ unique installs</li>
+    </ul>
+
+    <h3>Hack Week themes (4 per year)</h3>
+    <ol>
+      <li><strong>Observability Week</strong> — APM, logs, traces, profiling (Datadog deep, New Relic, Elastic, OpenObserve, Honeycomb extensions)</li>
+      <li><strong>Customer-Data Week</strong> — CRM, CDP, support (HubSpot, Pipedrive, Segment, Customer.io, Intercom deep)</li>
+      <li><strong>Security-Tooling Week</strong> — IAM, audit, vuln (Okta, 1Password, Snyk, Wiz, Crowdstrike)</li>
+      <li><strong>Finance Week</strong> — billing, accounting, bank (QuickBooks, NetSuite, Brex, Mercury, Ramp)</li>
+    </ol>
+
+    <p style="margin-top: 1rem;"><strong>Annual budget:</strong> $150K. <strong>Expected output:</strong> ~100 new specs at 70% acceptance rate.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-eyebrow">Program 3</div>
+  <h2 class="section-title">Coral Grants for Builders</h2>
+  <p class="section-lede">Pre-seed-style grants for ambitious projects built on Coral. Adapted from the Memori grant model.</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="pill">Micro</span>
+      <h3>$2,500 — Build something useful</h3>
+      <p>For individual developers building tools, demos, or content on Coral. Reviewed weekly. No equity, no strings.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Standard</span>
+      <h3>$10,000 — Build something durable</h3>
+      <p>For teams building meaningful integrations or open-source extensions. 1-page application. Reviewed monthly.</p>
+    </div>
+    <div class="card">
+      <span class="pill coral">Strategic</span>
+      <h3>$25,000 — Build something category-defining</h3>
+      <p>For founders building Coral-native products (commercial or OSS). Quarterly cohort. Includes mentorship + go-to-market support.</p>
+    </div>
+  </div>
+
+  <p style="margin-top: 1rem;"><strong>Annual budget:</strong> $100K. <strong>Expected output:</strong> ~20 grants/year, 3–5 turn into noteworthy projects.</p>
+</section>
+
+<section style="background: var(--surface); border-top: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-eyebrow">Combined program budget</div>
+    <h2 class="section-title">$300K/year across three programs.</h2>
+    <table>
+      <thead><tr><th>Program</th><th>Annual</th><th>Output target</th></tr></thead>
+      <tbody>
+        <tr><td>Coral Co-Pilot Cohort</td><td>$50K</td><td>32 design partners, 20 case studies, 50 Cloud teams</td></tr>
+        <tr><td>Source Spec Bounty</td><td>$150K</td><td>~100 new community specs</td></tr>
+        <tr><td>Coral Grants for Builders</td><td>$100K</td><td>~20 funded projects, 3–5 high-signal</td></tr>
+        <tr><th>Total</th><th>$300K</th><th>—</th></tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 1rem;">Programs run alongside the always-on operating system (content, community, events). See <a href="index.html">overview</a> for full Year 1 budget.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 opencolin · <a href="index.html">Back to overview</a></span>
+      <span>v1 · 2026-05-27</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+# Coral source spec template — GraphQL API with bearer auth
+# Copy, replace TEMPLATE_*, lint with `coral source lint`, test with `coral source test`.
+
+name: TEMPLATE_NAME
+description: 'TEMPLATE_DESCRIPTION'
+version: 0.1.0
+license: Apache-2.0
+maintainer: '@TEMPLATE_HANDLE'
+
+auth:
+  type: bearer
+  env: TEMPLATE_TOKEN
+
+base_url: https://api.template.com/graphql
+transport: graphql
+
+cache:
+  ttl: 60s
+
+tables:
+  - name: items
+    query: |
+      query Items($cursor: String) {
+        items(first: 100, after: $cursor) {
+          pageInfo { hasNextPage endCursor }
+          nodes {
+            id
+            name
+            createdAt
+            status
+          }
+        }
+      }
+    pagination:
+      type: cursor
+      response_path: items.pageInfo.endCursor
+      has_next_path: items.pageInfo.hasNextPage
+      variable: cursor
+    rows_path: items.nodes
+    columns:
+      - { name: id, path: id, type: text }
+      - { name: name, path: name, type: text }
+      - { name: created_at, path: createdAt, type: timestamp }
+      - { name: status, path: status, type: text }

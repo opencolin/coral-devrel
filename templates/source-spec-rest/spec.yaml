@@ -1,0 +1,40 @@
+# Coral source spec template — REST API with API-key auth
+# Copy, replace TEMPLATE_*, lint with `coral source lint`, test with `coral source test`.
+
+name: TEMPLATE_NAME
+description: 'TEMPLATE_DESCRIPTION'
+version: 0.1.0
+license: Apache-2.0
+maintainer: '@TEMPLATE_HANDLE'
+
+auth:
+  type: api_key
+  header: X-API-Key
+  env: TEMPLATE_API_KEY
+
+base_url: https://api.template.com/v1
+
+# Optional: per-request rate limit hint
+rate_limit:
+  requests_per_minute: 60
+
+# Optional: client-side response cache
+cache:
+  ttl: 60s
+
+tables:
+  - name: items
+    endpoint: /items
+    method: GET
+    params:
+      per_page: 100
+    pagination:
+      type: page
+      param: page
+      max_pages: 10
+    rows_path: data
+    columns:
+      - { name: id, path: id, type: text }
+      - { name: name, path: name, type: text }
+      - { name: created_at, path: created_at, type: timestamp }
+      - { name: status, path: status, type: text }

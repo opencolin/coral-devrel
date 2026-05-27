@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Metrics · Coral DevRel</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>Coral DevRel <small>by opencolin</small></a>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="programs.html">Programs</a>
+      <a href="ecosystem.html">Ecosystem</a>
+      <a href="community.html">Community</a>
+      <a href="content.html">Content</a>
+      <a href="events.html">Events</a>
+      <a href="partners.html">Partners</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="swot-analysis.html">SWOT</a>
+      <a href="metrics-dashboard.html">Metrics</a>
+      <a class="nav-cta" href="presentation.html">View deck →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Metrics dashboard</span>
+    <h1>One north star, four metric families, twelve KPIs.</h1>
+    <p class="lede">Public-facing where credible. Updated weekly during the engagement. Everything rolls up to the north star: <strong>weekly active developers running ≥3 sources</strong>.</p>
+  </div>
+</header>
+
+<section class="container">
+  <div class="section-eyebrow">North star</div>
+  <h2 class="section-title">Weekly active developers running ≥3 sources.</h2>
+  <p class="section-lede">Captures product-market fit (installed), activation (configured sources), and stickiness (using multiple). One number, all the answers.</p>
+
+  <div id="metrics-grid" class="stats">
+    <!-- Populated from data/metrics.json by main.js -->
+  </div>
+</section>
+
+<section style="background: var(--ocean-soft);">
+  <div class="container">
+    <div class="section-eyebrow">12-month KPI targets</div>
+    <h2 class="section-title">From today to month 12.</h2>
+
+    <table>
+      <thead><tr><th>Metric</th><th>Today (May 27, 2026)</th><th>Month 3</th><th>Month 6 (Cloud GA)</th><th>Month 12</th></tr></thead>
+      <tbody>
+        <tr><td>GitHub stars</td><td>4.9k</td><td>8k</td><td>12k</td><td>20k</td></tr>
+        <tr><td>Source specs (Verified + Official)</td><td>102</td><td>130</td><td>180</td><td>250+</td></tr>
+        <tr><td>Weekly active developers</td><td>instrument</td><td>1.5k</td><td>3k</td><td>5k</td></tr>
+        <tr><td>% installs running ≥3 sources @ d30</td><td>instrument</td><td>30%</td><td>45%</td><td>60%</td></tr>
+        <tr><td>Named customer references</td><td>0</td><td>3</td><td>8</td><td>20</td></tr>
+        <tr><td>Quotable public logos</td><td>0</td><td>0</td><td>2</td><td>5</td></tr>
+        <tr><td>Newsletter subscribers</td><td>0</td><td>1k</td><td>3k</td><td>8k</td></tr>
+        <tr><td>Discord members</td><td>est. 300</td><td>1.2k</td><td>3k</td><td>7k</td></tr>
+        <tr><td>Community PRs/quarter</td><td>est. 40</td><td>80</td><td>150</td><td>250</td></tr>
+        <tr><td>Coral Cloud paying teams</td><td>n/a</td><td>n/a</td><td>10 (Sep launch)</td><td>50</td></tr>
+        <tr><td>Coral Cloud ARR</td><td>$0</td><td>$0</td><td>$100K</td><td>$500K</td></tr>
+        <tr><td>Cohort design partners (cumulative)</td><td>0</td><td>10</td><td>20</td><td>32</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-eyebrow">Metric families</div>
+  <h2 class="section-title">Four buckets, twelve metrics.</h2>
+
+  <div class="cards">
+    <div class="card">
+      <span class="pill">Acquisition</span>
+      <h3>How people find Coral</h3>
+      <ul style="padding-left: 1.2rem; font-size: 0.92rem;">
+        <li>GitHub stars (delta/week)</li>
+        <li>Weekly installs (brew + sh + Windows)</li>
+        <li>Discord new members</li>
+        <li>Newsletter subscribers</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill">Activation</span>
+      <h3>From install to value</h3>
+      <ul style="padding-left: 1.2rem; font-size: 0.92rem;">
+        <li>% configuring ≥1 source @ 7 days</li>
+        <li>% configuring ≥3 sources @ 30 days <em>(north star input)</em></li>
+        <li>MCP registrations (Claude Code / Cursor / Cody / Continue)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill">Engagement</span>
+      <h3>Active usage</h3>
+      <ul style="padding-left: 1.2rem; font-size: 0.92rem;">
+        <li>WAD — queries executed/week</li>
+        <li>Source specs contributed/week</li>
+        <li>PRs merged from community</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill coral">Commercial</span>
+      <h3>Post-Q3 2026</h3>
+      <ul style="padding-left: 1.2rem; font-size: 0.92rem;">
+        <li>Cohort → Cloud conversion rate</li>
+        <li>Coral Cloud ARR</li>
+        <li>Logo count</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--coral-tint);">
+  <div class="container">
+    <div class="section-eyebrow">Instrumentation</div>
+    <h2 class="section-title">What we ship in week 1 to make the dashboard real.</h2>
+
+    <ol>
+      <li><strong>Anonymous telemetry opt-in</strong> (default-on, easy opt-out) — captures install, sources configured, queries/week. <em>Privacy: aggregated only, no SQL bodies, no row data.</em></li>
+      <li><strong>GitHub API harvester</strong> for stars / forks / PRs / contributors</li>
+      <li><strong>Discord analytics</strong> — members, daily active, message volume per channel</li>
+      <li><strong>Plausible / PostHog</strong> for docs + landing analytics</li>
+      <li><strong>Loops.so / Resend</strong> for newsletter analytics</li>
+      <li><strong>Quarterly metrics readout</strong> — public blog post + private investor update</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 opencolin · <a href="index.html">Back to overview</a></span>
+      <span>v1 · 2026-05-27</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

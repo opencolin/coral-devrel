@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ecosystem · Coral DevRel</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="index.html"><span class="brand-mark"></span>Coral DevRel <small>by opencolin</small></a>
+    <div class="nav-links">
+      <a href="index.html">Overview</a>
+      <a href="programs.html">Programs</a>
+      <a href="ecosystem.html">Ecosystem</a>
+      <a href="community.html">Community</a>
+      <a href="content.html">Content</a>
+      <a href="events.html">Events</a>
+      <a href="partners.html">Partners</a>
+      <a href="marketplace.html">Marketplace</a>
+      <a href="swot-analysis.html">SWOT</a>
+      <a href="metrics-dashboard.html">Metrics</a>
+      <a class="nav-cta" href="presentation.html">View deck →</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <span class="hero-eyebrow">Ecosystem</span>
+    <h1>The agent data layer sits between four ecosystems. Coral has to win positioning in all of them.</h1>
+    <p class="lede">AI coding agents (consumers), SaaS APIs (sources), IDPs and observability vendors (channel partners and threats), and frontier-model providers (Anthropic in particular). Each ecosystem needs a tailored play.</p>
+  </div>
+</header>
+
+<section class="container">
+  <div class="section-eyebrow">Ecosystem 1 · AI coding agents</div>
+  <h2 class="section-title">Be the default data layer for the top 5.</h2>
+  <p class="section-lede">Coral has no value without an agent in front of it. Cement the relationship with each major AI coding agent before competitors do.</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="pill coral">Tier 1</span>
+      <h3>Claude Code</h3>
+      <p>Coral's primary benchmark uses Claude Opus. Co-marketed reference architecture. Anthropic-published case study.</p>
+    </div>
+    <div class="card">
+      <span class="pill coral">Tier 1</span>
+      <h3>Cursor</h3>
+      <p>One-click <code>.cursor/mcp.json</code> template. Cursor Marketplace featured entry. Joint webinar with Anysphere.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Tier 2</span>
+      <h3>Continue.dev</h3>
+      <p>OSS-friendly natural ally. Continue's MCP via Coral. Reference repo + blog post.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Tier 2</span>
+      <h3>Sourcegraph Cody / Amp</h3>
+      <p>Code-graph context × Coral ops-data context demo. Sourcegraph Enterprise is a buyer for Coral Cloud.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Tier 3</span>
+      <h3>Goose (Block)</h3>
+      <p>Block's open-source agent. Quickstart guide. Block's eng team is a cohort target.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Tier 3</span>
+      <h3>Aider, Cline, Devin, Claude Desktop</h3>
+      <p>Quickstart per agent. Long-tail acquisition channel.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--ocean-soft);">
+  <div class="container">
+    <div class="section-eyebrow">Ecosystem 2 · SaaS APIs (the sources)</div>
+    <h2 class="section-title">Sources are the wedge. Quality + breadth.</h2>
+    <p class="section-lede">27 bundled + 75+ community sources today. Target: 250+ by month 12. The bounty program funds breadth; the source spec cookbook funds quality.</p>
+
+    <h3>Source roadmap priorities (next 12 months)</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Today</th><th>Add</th><th>Priority</th></tr></thead>
+      <tbody>
+        <tr><td>Observability</td><td>Datadog, Sentry, OpenTelemetry, Grafana, CloudWatch, OpenObserve, Honeycomb</td><td>New Relic, Elastic APM, Splunk, Lightstep, Tempo, Loki, Mimir</td><td>High — flagship vertical</td></tr>
+        <tr><td>Issue tracking</td><td>GitHub, GitLab, Linear, ClickUp, Jira</td><td>Notion tasks, Asana, Trello, Shortcut, Monday.com, Height</td><td>High</td></tr>
+        <tr><td>Communication</td><td>Slack, Confluence, Intercom</td><td>Discord, Microsoft Teams, Zoom, Front, HelpScout</td><td>Medium</td></tr>
+        <tr><td>Infra / Cloud</td><td>k8s, Cloudflare, Vercel, CloudWatch, Neon</td><td>AWS deep, GCP, Azure, Fly, Render, Railway, DigitalOcean</td><td>High — SRE persona</td></tr>
+        <tr><td>Auth / Identity</td><td>Auth0</td><td>Okta, Clerk, WorkOS, Frontegg, Stytch, FusionAuth</td><td>Medium</td></tr>
+        <tr><td>Customer / CRM</td><td>HubSpot</td><td>Salesforce, Pipedrive, Attio, Close, Folk</td><td>Medium</td></tr>
+        <tr><td>Billing / Finance</td><td>Stripe</td><td>QuickBooks, NetSuite, Brex, Mercury, Ramp, Recurly, Chargebee</td><td>Medium</td></tr>
+        <tr><td>Product analytics</td><td>PostHog, Weights & Biases</td><td>Mixpanel, Amplitude, Segment, Heap</td><td>Medium</td></tr>
+        <tr><td>Incident response</td><td>PagerDuty, incident.io</td><td>Rootly, FireHydrant, Squadcast, Opsgenie</td><td>Low — competitive overlap</td></tr>
+        <tr><td>Data warehouses</td><td>ClickHouse</td><td>Snowflake, BigQuery, Redshift, Databricks, MotherDuck</td><td>Low — different abstraction</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="container">
+  <div class="section-eyebrow">Ecosystem 3 · IDPs + observability (channel + threat)</div>
+  <h2 class="section-title">Turn displacement risk into distribution.</h2>
+  <p class="section-lede">Backstage + Cortex + OpsLevel + Port own platform-engineering attention. Datadog + Honeycomb + Grafana own observability attention. Both ship MCP; both could absorb Coral's use case. The play: ship Coral as a plugin/source inside each, then own the cross-source narrative they can't.</p>
+
+  <div class="cards">
+    <div class="card">
+      <span class="pill">Channel</span>
+      <h3>Backstage</h3>
+      <p>OSS, MCP-native (May 2026 v1.51). Ship <code>@backstage-community/plugin-coral</code> — Coral as a first-class data source inside Backstage. Convert Threat T6 into pipeline.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Channel</span>
+      <h3>Spotify Portal</h3>
+      <p>Closed-source Backstage variant. Reference partner integration. Spotify enterprise = Coral enterprise.</p>
+    </div>
+    <div class="card">
+      <span class="pill warning">Competitive</span>
+      <h3>Datadog Bits AI</h3>
+      <p>Single-vendor MCP. Coral's wedge: JOIN Datadog × GitHub × Linear. Co-existence message, not competition.</p>
+    </div>
+    <div class="card">
+      <span class="pill warning">Competitive</span>
+      <h3>Honeycomb MCP</h3>
+      <p>Same shape. Position Coral as cross-source layer above Honeycomb's MCP.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Adjacent</span>
+      <h3>Grafana AI Observability</h3>
+      <p>$25K/yr enterprise min. Coral as the agent layer that talks to Grafana's MCP.</p>
+    </div>
+    <div class="card">
+      <span class="pill">Watch</span>
+      <h3>Cortex.io / OpsLevel / Port</h3>
+      <p>Closed IDPs. Cortex MCP shipped. Position Coral as the data layer their AI agents use.</p>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--coral-tint);">
+  <div class="container">
+    <div class="section-eyebrow">Ecosystem 4 · Frontier models</div>
+    <h2 class="section-title">Anthropic alliance is the single most important relationship.</h2>
+    <p class="section-lede">Coral's benchmark uses Claude Opus. The MCP standard is Anthropic's. The closest comparable architecture — direct provider MCPs — is what Coral benchmarks against. Lock in the alliance early.</p>
+
+    <h3>Anthropic playbook</h3>
+    <ul>
+      <li>Co-published reference architecture: "Coral is the recommended data layer for Claude Code multi-source agents"</li>
+      <li>Quarterly benchmark republished on Anthropic's blog or as a joint post</li>
+      <li>MCP Summit participation (if Anthropic hosts one)</li>
+      <li>Anthropic Engineering Builds Coral usage internally (back-channel + amplify)</li>
+      <li>Anthropic Solutions Architects reference Coral in customer briefings</li>
+    </ul>
+
+    <h3>OpenAI + Google (lighter touch)</h3>
+    <ul>
+      <li>Benchmark coverage for GPT-5 and Gemini 3 to keep narrative model-agnostic</li>
+      <li>Reference architectures for OpenAI Responses API tool-use + Gemini's native MCP support (when shipped)</li>
+      <li>Avoid exclusivity — Coral runs anywhere</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom">
+      <span>© 2026 opencolin · <a href="index.html">Back to overview</a></span>
+      <span>v1 · 2026-05-27</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

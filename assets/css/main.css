@@ -510,6 +510,64 @@ body.destruct-flash { animation: destructFlash 600ms ease forwards; }
   20%, 80% { background: rgba(220, 38, 38, 0.25); }
 }
 
+/* Top-of-page countdown banner */
+.destruct-banner {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  background: linear-gradient(90deg, #2A1116 0%, #3A1A1A 50%, #2A1116 100%);
+  color: #FECACA;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  border-bottom: 1px solid rgba(220, 38, 38, 0.3);
+  padding: 0.55rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.destruct-banner-icon {
+  display: inline-block;
+  animation: destructBlink 1.5s ease-in-out infinite;
+}
+.destruct-banner-label { color: #FCA5A5; }
+.destruct-banner-time {
+  color: #FFF;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+  background: rgba(220, 38, 38, 0.18);
+  padding: 0.15rem 0.55rem;
+  border-radius: 4px;
+  border: 1px solid rgba(220, 38, 38, 0.35);
+}
+.destruct-banner-when { color: #C9A99E; font-size: 0.78rem; }
+.destruct-banner.urgent .destruct-banner-time { background: rgba(220, 38, 38, 0.4); border-color: #DC2626; }
+.destruct-banner.urgent { animation: destructPulse 1.5s ease-in-out infinite; }
+@keyframes destructBlink {
+  0%, 70%, 100% { opacity: 1; }
+  85% { opacity: 0.3; }
+}
+@keyframes destructPulse {
+  0%, 100% { background: linear-gradient(90deg, #2A1116 0%, #3A1A1A 50%, #2A1116 100%); }
+  50% { background: linear-gradient(90deg, #3A1116 0%, #5C1A1A 50%, #3A1116 100%); }
+}
+
+/* When banner sits above sticky nav, push nav so it doesn't visually collide */
+.destruct-banner + .nav { top: 0; }
+
+/* Hide banner on deck */
+body.deck .destruct-banner { display: none; }
+
+@media (max-width: 680px) {
+  .destruct-banner { font-size: 0.78rem; gap: 0.5rem; padding: 0.5rem 0.75rem; }
+  .destruct-banner-when { display: none; }
+}
+
 /* Footer */
 footer {
   background: var(--ink);

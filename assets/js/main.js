@@ -49,6 +49,93 @@
   render();
 })();
 
+// Self-destruct countdown banner — injected on every site page (skipped on deck + tombstone)
+(async function () {
+  if (document.body.classList.contains('deck')) return;
+  if (/destroyed\.html$/i.test(location.pathname)) return;
+
+  // Build banner DOM safely (no innerHTML)
+  const banner = document.createElement('div');
+  banner.className = 'destruct-banner';
+  banner.setAttribute('role', 'status');
+
+  const icon = document.createElement('span');
+  icon.className = 'destruct-banner-icon';
+  icon.textContent = '💥';
+
+  const label = document.createElement('span');
+  label.className = 'destruct-banner-label';
+  label.textContent = 'This pitch self-destructs in';
+
+  const time = document.createElement('span');
+  time.className = 'destruct-banner-time';
+  time.textContent = '--:--:--';
+
+  const when = document.createElement('span');
+  when.className = 'destruct-banner-when';
+  when.textContent = '';
+
+  banner.appendChild(icon);
+  banner.appendChild(label);
+  banner.appendChild(time);
+  banner.appendChild(when);
+
+  document.body.insertBefore(banner, document.body.firstChild);
+
+  let target = null;
+  let timer = null;
+
+  function fmt(ms) {
+    const sec = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(sec / 3600);
+    const m = Math.floor((sec % 3600) / 60);
+    const s = sec % 60;
+    const pad = n => String(n).padStart(2, '0');
+    return `${pad(h)}:${pad(m)}:${pad(s)}`;
+  }
+
+  function localWhenStr(d) {
+    try {
+      return d.toLocaleString(undefined, {
+        weekday: 'short', month: 'short', day: 'numeric',
+        hour: 'numeric', minute: '2-digit', timeZoneName: 'short'
+      });
+    } catch { return d.toISOString(); }
+  }
+
+  function tick() {
+    if (!target) return;
+    const ms = target.getTime() - Date.now();
+    if (ms <= 0) {
+      time.textContent = '00:00:00';
+      banner.classList.add('urgent');
+      if (timer) { clearInterval(timer); timer = null; }
+      // Visible kill — redirect to tombstone
+      window.location.href = 'destroyed.html';
+      return;
+    }
+    time.textContent = fmt(ms);
+    // Last hour goes urgent
+    if (ms < 60 * 60 * 1000) banner.classList.add('urgent');
+  }
+
+  try {
+    const res = await fetch('/api/destruct-status', { cache: 'no-store' });
+    const data = await res.json();
+    if (!data || !data.armed || !data.deadline) {
+      // Not armed — remove the banner gracefully
+      banner.remove();
+      return;
+    }
+    target = new Date(data.deadline);
+    when.textContent = '· at ' + localWhenStr(target);
+    tick();
+    timer = setInterval(tick, 1000);
+  } catch (e) {
+    banner.remove();
+  }
+})();
+
 // Self-destruct modal
 (function () {
   const open = document.getElementById('self-destruct-open');
